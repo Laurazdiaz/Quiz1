@@ -1,0 +1,28 @@
+Primer quiz
+
+CREATE BIGFILE TABLESPACE big_tbs_Laura
+DATAFILE 'PrimerDTF.dbf' SIZE 1G;
+
+
+CREATE TABLESPACE  Quiz
+datafile 'PDTF.dbf' size 200M,
+'SDTF.dbf' size 200M,
+'TDTF_two.dbf' size 200M;
+
+CREATE PROFILE primer_perfil limit
+sessions_per_user UNLIMITED
+idle_time 15
+password_life_time UNLIMITED
+failed_login_attempts UNLIMITED;
+
+
+CREATE USER usLaura
+identified by usuario1
+default tablespace Quiz
+profile primer_perfil;
+
+
+
+
+
+
